@@ -79,7 +79,7 @@ rc_channels = {
 
 def arm(args, state):
     try:
-        command.arming(value=state)
+        ret = command.arming(value=state)
     except rospy.ServiceException as ex:
         fault(ex)
 
