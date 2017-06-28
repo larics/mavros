@@ -85,6 +85,7 @@ private:
 	std::string tf_frame_id;
 	std::string tf_child_frame_id;
 	double tf_rate;
+	double yaw_rate;
 	bool reverse_throttle;
 
 	/* -*- mid-level helpers -*- */
@@ -104,10 +105,12 @@ private:
 					ftf::transform_orientation_baselink_aircraft(Eigen::Quaterniond(tr.rotation()))
 					);
 
+		// hack
+		// we send yaw rate here together with attitude reference
 		set_attitude_target(stamp.toNSec() / 1000000,
 				ignore_all_except_q,
 				q,
-				Eigen::Vector3d::Zero(),
+				Eigen::Vector3d(0.0, 0.0, yaw_rate),
 				0.0);
 	}
 
@@ -163,10 +166,15 @@ private:
 	}
 
 	void twist_cb(const geometry_msgs::TwistStamped::ConstPtr &req) {
+		// hack, we are just using yaw rate, which we send in the message used for attitude reference
+		/*
 		Eigen::Vector3d ang_vel;
 		tf::vectorMsgToEigen(req->twist.angular, ang_vel);
 
 		send_attitude_ang_velocity(req->header.stamp, ang_vel);
+		*/
+		yaw_rate = req->twist.angular.z;
+
 	}
 
 	inline bool is_normalized(float throttle, const float min, const float max)
