@@ -1,6 +1,6 @@
 # Some MAV_CMD command codes.
 # Actual meaning and params you may find in MAVLink documentation
-# https://pixhawk.ethz.ch/mavlink/
+# http://mavlink.org/messages/common#ENUM_MAV_CMD
 
 # some common MAV_CMD
 uint16 CMD_DO_SET_MODE = 176
@@ -22,6 +22,7 @@ uint16 CMD_DO_MOUNT_CONTROL_QUAT = 220
 uint16 CMD_PREFLIGHT_CALIBRATION = 241
 uint16 CMD_MISSION_START = 300
 uint16 CMD_COMPONENT_ARM_DISARM = 400
+uint16 CMD_GET_HOME_POSITION = 410
 uint16 CMD_START_RX_PAIR = 500
 uint16 CMD_REQUEST_AUTOPILOT_CAPABILITIES = 520
 uint16 CMD_DO_TRIGGER_CONTROL = 2003
@@ -34,4 +35,3 @@ uint16 NAV_LOITER_TIME = 19
 uint16 NAV_RETURN_TO_LAUNCH = 20
 uint16 NAV_LAND = 21
 uint16 NAV_TAKEOFF = 22
-

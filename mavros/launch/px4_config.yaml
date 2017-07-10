@@ -20,6 +20,7 @@ sys:
 # sys_time
 time:
   time_ref_source: "fcu"  # time_reference source
+  timesync_mode: MAVLINK
   timesync_avg_alpha: 0.6 # timesync averaging factor
 
 # --- mavros plugins (alphabetical order) ---
@@ -45,9 +46,11 @@ cmd:
 global_position:
   frame_id: "fcu"           # pose and fix frame_id
   rot_covariance: 99999.0   # covariance for attitude?
+  use_relative_alt: true    # use relative altitude for local coordinates
   tf:
     send: false               # send TF?
     frame_id: "local_origin"  # TF frame_id
+    global_frame_id: "earth"  # TF earth frame_id
     child_frame_id: "fcu_utm" # TF child_frame_id
 
 # imu_pub
@@ -66,6 +69,7 @@ local_position:
     send: false
     frame_id: "local_origin"
     child_frame_id: "fcu"
+    send_fcu: false
 
 # param
 # None, used for FCU params
@@ -172,5 +176,12 @@ vision_speed:
 # vibration
 vibration:
   frame_id: "vibration"
+
+# adsb
+# None
+
+# odom
+odometry:
+  estimator_type: 3 # check enum MAV_ESTIMATOR_TYPE in <http://mavlink.org/messages/common>
 
 # vim:set ts=2 sw=2 et:

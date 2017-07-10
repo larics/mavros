@@ -2,6 +2,87 @@
 Changelog for package test_mavros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.19.0 (2017-05-05)
+-------------------
+* cmake: remove Eigen warning
+* Contributors: Vladimir Ermakov
+
+0.18.7 (2017-02-24)
+-------------------
+
+0.18.6 (2017-02-07)
+-------------------
+
+0.18.5 (2016-12-12)
+-------------------
+
+0.18.4 (2016-11-11)
+-------------------
+* Update README for all packages
+* Contributors: Vladimir Ermakov
+
+0.18.3 (2016-07-07)
+-------------------
+
+0.18.2 (2016-06-30)
+-------------------
+
+0.18.1 (2016-06-24)
+-------------------
+
+0.18.0 (2016-06-23)
+-------------------
+* Test_mavros : fix compilation on gcc6.1
+* Contributors: khancyr
+
+0.17.3 (2016-05-20)
+-------------------
+* test `#546 <https://github.com/mavlink/mavros/issues/546>`_: Added check of control_toolbox version (1.14.0)
+  In Kinetic control_toolbox changed API of Pid::initPid().
+* Contributors: Vladimir Ermakov
+
+0.17.2 (2016-04-29)
+-------------------
+
+0.17.1 (2016-03-28)
+-------------------
+
+0.17.0 (2016-02-09)
+-------------------
+* rebased with master
+* Contributors: francois
+
+0.16.6 (2016-02-04)
+-------------------
+
+0.16.5 (2016-01-11)
+-------------------
+
+0.16.4 (2015-12-14)
+-------------------
+* updated local position subscription topic
+* Contributors: Andreas Antener
+
+0.16.3 (2015-11-19)
+-------------------
+
+0.16.2 (2015-11-17)
+-------------------
+
+0.16.1 (2015-11-13)
+-------------------
+
+0.16.0 (2015-11-09)
+-------------------
+
+0.15.0 (2015-09-17)
+-------------------
+* test: update readme
+* test: add required plugins
+* test: new test for local_position + SSP (`#387 <https://github.com/mavlink/mavros/issues/387>`_) + URDF
+* test: add schematic plane urdf
+* Contributors: Vladimir Ermakov
+
 0.14.2 (2015-08-20)
 -------------------
 * test: fix depend on angles, fix catkin lint warnings

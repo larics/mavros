@@ -31,6 +31,14 @@ endif()
 
 include(EnableCXX11)
 
+# Fix issue #546: control_toolbox changed API in Kinetic
+if(${control_toolbox_VERSION} VERSION_LESS 1.14.0)
+  message(STATUS "Use old control_toolbox API")
+  add_definitions(-DCONTROL_TOOLBOX_PRE_1_14)
+else()
+  message(STATUS "Use new control_toolbox API")
+endif()
+
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
@@ -49,7 +57,7 @@ catkin_package(
   #INCLUDE_DIRS include
   #LIBRARIES sitl_test
   CATKIN_DEPENDS mavros mavros_extras roscpp std_msgs geometry_msgs tf2_ros eigen_conversions control_toolbox
-  DEPENDS Boost Eigen
+  DEPENDS Boost
 )
 
 ###########
@@ -59,7 +67,7 @@ catkin_package(
 include_directories(
   include
   ${Boost_INCLUDE_DIRS}
-  ${EIGEN_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
 )
 
