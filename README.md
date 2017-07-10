@@ -13,6 +13,13 @@ MAVLink extendable communication node for ROS.
 - Since 2016-06-22 (pre v0.18) Indigo and Jade separated from master to indigo-devel branch.
 - Since 2016-06-23 (0.18.0) support MAVLink 2.0 without signing.
 
+Additional installation instructions
+--------------
+For installing these packages on a ROS barebone version, you will need to install the following packages and libraries:
+```
+$ sudo apt-get install ros-kinetic-mavlink ros-kinetic-angles
+$ sudo apt-get install libgeographic-dev
+```
 
 mavros package
 --------------
