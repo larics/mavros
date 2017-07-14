@@ -19,6 +19,7 @@ For installing these packages on a ROS barebone version, you will need to instal
 ```
 $ sudo apt-get install ros-kinetic-mavlink ros-kinetic-angles
 $ sudo apt-get install libgeographic-dev
+$ sudo apt-get install ros-kinetic-urdf ros-kinetic-control-toolbox
 ```
 
 mavros package
